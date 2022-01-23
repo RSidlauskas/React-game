@@ -1,38 +1,235 @@
 .App {
-  text-align: center;
+    text-align: center;
+    font-family: "Friz Quadrata Std";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body::-webkit-scrollbar {
+    display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*----------------------global*/
+a:link {
+    text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*---------------------styles*/
+.blur {
+    background: rgba(52, 24, 10, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    height: 200px;
+    width: 50%;
+    color: aliceblue;
 }
 
-.App-link {
-  color: #61dafb;
+.boxHover {
+    cursor: pointer;
+    transition-duration: 0.2s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.boxHover:hover {
+    box-shadow: 0px 0px 40px 2px #BC801A;
+}
+
+.boxHover:hover h1 {
+    -webkit-text-stroke: 2px #BC801A;
+}
+
+.icon {
+    height: 70px;
+    width: 70px;
+    margin: 3px;
+}
+
+.iconTooltip {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+    background-color: #080D21;
+    padding: 1rem;
+    box-shadow: 0px 0px 1px 2px #595959 inset;
+    box-shadow: 0px 0px 2px 2px grey;
+}
+
+.gold {
+    text-align: right;
+    color: white;
+    margin: 10px;
+    background-color: #19180F;
+    width: 40%;
+    border-radius: 5px;
+    padding-right: 1rem;
+    border: 1px solid dimgrey;
+    box-shadow: 0px 0px 2px 2px #624F03;
+}
+
+
+/*---------------------charCreation*/
+
+.charCreation {
+    background-image: radial-gradient(#DD7752 30%, #E69767 80%, #F99E5C, #D15237 120%);
+    overflow: hidden;
+}
+
+.cardd {
+    flex: 1 0 100%;
+    margin: 1rem;
+    background-color: rgba(47, 37, 37, 0.48);
+}
+
+.cardd:hover {
+    box-shadow: 0px 0px 50px 5px #a24d27, 0px 0px 70px 1px rgba(0, 0, 0, 0.79) inset;
+    cursor: pointer;
+    backdrop-filter: blur(300px);
+
+}
+
+/*----------------------Main Window*/
+
+.gameWindow {
+    min-height: 1050px;
+    background-image: url("https://i.imgur.com/lfW8VnQ.jpg");
+}
+
+.button {
+    color: #af7a31;
+    font-weight: bold;
+    background-color: #640302;
+    box-shadow: 0px 0px 1px 2px grey;
+    border: 1px solid #2f0406;
+    border-radius: 5px;
+    padding: 0.8rem;
+    width: 100px;
+}
+
+.button:hover {
+    background-color: #9d0a09;
+}
+
+.header {
+    height: 80px;
+    background-image: radial-gradient(rgba(45, 40, 38, 0.54), rgb(47, 46, 45));
+    box-shadow: 0px 0px 1px 2px #595959 inset;
+    box-shadow: 0px 0px 2px 2px grey;
+
+}
+
+.characterWindow {
+    background-image: radial-gradient(rgba(45, 24, 16, 0.75) 30%, rgba(110, 72, 49, 0.9) 80%, rgba(134, 52, 35, 1) 120%);
+    border-radius: 10px;
+    height: 100%;
+    box-shadow: 0px 0px 2px 2px grey;
+    color: #c2b3b3;
+
+}
+
+.title {
+    background-image: radial-gradient(#2D2826, #2f2e2d);
+    box-shadow: 0px 0px 1px 2px #595959 inset;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    color: #af7a31;
+    font-weight: 800;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inventory {
+    background-image: linear-gradient(#413A28, #1C150F);
+    background-color: #3E3230;
+    border-radius: 4px;
+    margin-bottom: 10em;
+    box-shadow: 0px 0px 2px 2px grey;
+    padding: 3px;
+    height: 100%;
+}
+
+/*------------------------ SHOP */
+
+.shop {
+    height: 100vh;
+    background: url("https://wow-freakz.com/img/screenshots/wowhead_79170.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.shopGoods {
+    height: 600px;
+}
+
+.shopMenu {
+    background-image: radial-gradient(#2D2826, #2f2e2d);
+    border-bottom: 2px solid gray;
+}
+
+/*------------------------ Arena*/
+
+.arena {
+    background: url("https://pbs.twimg.com/media/C0TKrFlUsAAy-9y?format=jpg&name=4096x4096") no-repeat bottom center fixed;
+    height: 100vh;
+}
+
+.enitityUi {
+    height: 800px;
+    background-image: radial-gradient(rgba(86, 16, 4, 0.8) 30%, rgba(110, 72, 49, 0.9) 80%, rgba(134, 52, 35, 1) 120%);
+    box-shadow: 0px 0px 2px 2px grey, 0px 0px 20px 2px #3b3939 inset;
+    border-radius: 10px;
+    color: #c2b3b3;
+}
+
+.portrait {
+    width: 80%;
+    height: 300px;
+    box-shadow: 0px 0px 4px 1px #575757, 0px 0px 20px 2px #3b3939 inset;
+}
+
+.portraitImg {
+    height: 100%;
+    width: 100%;
+}
+
+.health {
+    width: 88% !important;
+    height: 30px !important;
+    border-radius: 10px !important;
+    box-shadow: 0px 0px 4px 1px #575757, 0px 0px 20px 2px #3b3939 inset !important;
+    background-color: #2D2826 !important;
+}
+
+.healthAmount {
+    width: 100% !important;
+    height: 30px !important;
+    border-radius: 10px !important;
+    box-shadow: 0px 0px 4px 1px #575757, 0px 0px 20px 2px #3b3939 inset !important;
+    background-color: #2D2826 !important;
+}
+
+.healthAmount .progress-bar {
+    background-image: linear-gradient(rgba(86, 16, 4, 0.8), #9d0a09) !important;
+}
+
+.energy {
+    width: 88% !important;
+    height: 30px !important;
+    border-radius: 10px !important;
+    box-shadow: 0px 0px 4px 1px #575757, 0px 0px 20px 2px #3b3939 inset !important;
+    background-color: #2D2826 !important;
+}
+
+.energyAmount {
+    width: 100% !important;
+    height: 30px !important;
+    border-radius: 10px !important;
+    box-shadow: 0px 0px 4px 1px #575757, 0px 0px 20px 2px #3b3939 inset !important;
+    background-color: #2D2826 !important;
+}
+
+.energyAmount .progress-bar {
+    background-image: linear-gradient(#043236, #01586b) !important;
+
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom";
 
-const Header = () => {
+const HeaderShop = () => {
 
     const navigate = useNavigate()
 
@@ -16,4 +16,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default HeaderShop;

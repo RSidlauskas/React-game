@@ -4,11 +4,30 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import {configureStore} from "@reduxjs/toolkit";
+import {Provider} from "react-redux";
+
+import player from "./features/player";
+import trader from "./features/trader";
+import dropItems from "./features/dropItems";
+import monsters from "./features/monsters";
+
+const store = configureStore({
+    reducer: {
+        player: player,
+        trader: trader,
+        dropItems: dropItems,
+        monsters: monsters
+    }
+})
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
