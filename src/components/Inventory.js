@@ -6,7 +6,7 @@ import ReactHover, {Hover, Trigger} from "react-hover";
 import {useLocation} from "react-router-dom";
 
 import {useSelector, useDispatch} from "react-redux";
-import {addGold, removeItemUpdate, equipWeapon, editStat} from "../features/player";
+import {addGold, removeItemUpdate, equipWeapon, editStat, refreshItems} from "../features/player";
 
 
 const Inventory = () => {
@@ -58,6 +58,7 @@ const Inventory = () => {
                 equip: true
             }
             dispatch(editStat(update))
+            dispatch(refreshItems())
          })
     }
 

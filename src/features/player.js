@@ -82,17 +82,6 @@ export const player = createSlice({
             state.value.items = filteredOut
 
 
-            let realItems = state.value.items.filter((x) =>
-                x.value !== "empty")
-            const emptySlots = state.value.race.inventorySlots - realItems.length
-
-            for (let i = 0; i < emptySlots; i++) {
-                realItems = [...realItems, emptybagSlot]
-            }
-            console.log(realItems)
-
-            state.value.items = realItems
-
         },
         unequipWeapon: (state, action) => {
             const emptybagSlot = {
@@ -152,16 +141,29 @@ export const player = createSlice({
 
             }
         },
-        // drinkPotion: (state, action) => {
-        //     const key = action.payload.potionKey.toString()
-        //     const value = action.payload.potionValue
-        //     state.value.race[key] += value
-        // }
+        refreshItems: (state, action) =>{
+            const emptybagSlot = {
+                image: "https://static.wikia.nocookie.net/wowpedia/images/0/08/Ui-paperdoll-slot-bag.png",
+                value: "empty",
+            }
+
+            let realItems = state.value.items.filter((x) =>
+                x.value !== "empty")
+            const emptySlots = state.value.race.inventorySlots - realItems.length
+
+            for (let i = 0; i < emptySlots; i++) {
+                realItems = [...realItems, emptybagSlot]
+            }
+            console.log(realItems)
+
+            state.value.items = realItems
+        }
+
     }
 })
 
 export const {chooseRace, addItem, addItemUpdate, removeItemUpdate,
-    removeGold, addGold, equipWeapon, unequipWeapon, editStat, drinkPotion} = player.actions
+    removeGold, addGold, equipWeapon, unequipWeapon, editStat, refreshItems} = player.actions
 
 export default player.reducer
 
